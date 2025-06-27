@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AFPA - Atsas Future Plan Association</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+      }
+      header {
+        background: #004d40;
+        color: white;
+        padding: 1em;
+        text-align: center;
+      }
+      nav {
+        background: #00796b;
+        display: flex;
+        justify-content: center;
+        padding: 0.5em;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+      }
+      section {
+        padding: 2em;
+        background: white;
+        margin: 1em;
+      }
+      footer {
+        background: #004d40;
+        color: white;
+        text-align: center;
+        padding: 1em;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: auto;
+      }
+      form input, form textarea {
+        margin: 0.5em 0;
+        padding: 0.5em;
+        font-size: 1em;
+      }
+      form button {
+        padding: 0.7em;
+        background: #00796b;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+    <script type="module">
+      const teamMembers: string[] = [
+        "Fabiola Ugams",
+        "Risto Kharixab",
+        "WhiteCliff Gomusab",
+        "Bernard Uirab",
+        "Gerhard Engelbrecht",
+        "Riaan Gariseb",
+        "Erwen Kharuxab",
+        "Ronald Teddy Gertze",
+        "Rashida Urikhos",
+        "Tashia Uiras",
+        "Natalia Garoes",
+        "Magritha Gaweses"
+      ];
+
+      const teamList = document.getElementById("team-list");
+      if (teamList) {
+        teamMembers.forEach((name) => {
+          const li = document.createElement("li");
+          li.textContent = name;
+          teamList.appendChild(li);
+        });
+      }
+
+      const contactForm = document.getElementById("contact-form") as HTMLFormElement | null;
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Thank you for your message! We will get back to you soon.");
+          contactForm.reset();
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Atsas Future Plan Association (AFPA)</h1>
+      <p>Empowering Youth, Preserving Heritage, Building Our Future</p>
+    </header>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#team">Our Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+      <section id="about">
+        <h2>About AFPA</h2>
+        <p>
+          AFPA is a youth-led initiative in Otjimbingwe dedicated to job creation, cultural preservation,
+          and sustainable community development. We are turning heritage into opportunity by restoring
+          the historic Powder Tower, building a cultural village, and creating a community development center.
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Our Projects</h2>
+        <ul>
+          <li>Restoration of the 1870 Powder Tower as a tourist attraction</li>
+          <li>Construction of a Community Development Center on the historic Helbich Shop site</li>
+          <li>Creation of a Cultural Village showcasing traditional practices and crafts</li>
+          <li>Development of a youth-run restaurant and cultural events space</li>
+        </ul>
+      </section>
+
+      <section id="team">
+        <h2>Our Team</h2>
+        <p>AFPA was founded by 13 passionate young leaders including:</p>
+        <ul id="team-list"></ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <p>Or reach us directly:</p>
+        <p>Email: <span id="email">afpa.otjimbingwe@example.com</span></p>
+        <p>Phone: <span id="phone">+264 81 000 0000</span></p>
+        <p>Location: Otjimbingwe, Erongo Region, Namibia</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Atsas Future Plan Association. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
